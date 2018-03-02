@@ -24,6 +24,11 @@
   "main": "lib/index.js",
   "license": "MIT",
   "private": false,
+  "files": [
+    "lib",
+    "README.md",
+    "LICENSE"
+  ],
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.6.1",
