@@ -1,6 +1,6 @@
 {
   "name": "@ekz/option",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Option/Maybe type to be used with flow.js",
   "keywords": [
     "option",
@@ -13,6 +13,14 @@
     "name": "Alan Heitkotter",
     "email": "heitkotter@gmail.com"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/erkez/flow-option.git"
+  },
+  "bugs": {
+    "url": "https://github.com/erkez/flow-option/issues"
+  },
+  "homepage": "https://github.com/erkez/flow-option#readme",
   "main": "lib/index.js",
   "license": "MIT",
   "private": false,
