@@ -15,8 +15,11 @@ let valueA = Option.of(null).map(x => x + 2).getOrElse(() => 0);
 let valueB = Some('any object').flatMap(x => Some(`${x}!!!`)).getOrUndefined();
 // valueB = 'any object!!!'
 
-let valueC = None.flatMap(x => Option.of(2)).map(x => x * 3).getOrElse(() => 0);
+let valueC = Some(null).flatMap(() => Option.of(2)).map(x => x * 3).getOrElse(() => 0);
 // valueC = 6
+
+let valueD = Some(1).mapNullable(() => null).getOrElse(() => -1);
+// valueD = -1
 
 None.isDefined; // false
 Some(1).isDefined; // true
