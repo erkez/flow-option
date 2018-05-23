@@ -87,6 +87,10 @@ export class Option<+A> {
     static of<V>(value?: ?V): Option<V> {
         return value == null ? None : Some(value);
     }
+
+    static None: Option<empty>;
+
+    static Some: <A>(value: A) => Option<A>;
 }
 
 class $None extends Option<empty> {
@@ -103,6 +107,8 @@ class $None extends Option<empty> {
  * The empty None object.
  */
 export const None: Option<empty> = new $None(PrivateToken);
+
+Option.None = None;
 
 class $Some<A> extends Option<A> {
     _value: A;
@@ -127,3 +133,5 @@ class $Some<A> extends Option<A> {
 export function Some<+A>(value: A): Option<A> {
     return new $Some(value);
 }
+
+Option.Some = Some;
