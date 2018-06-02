@@ -18,8 +18,17 @@ let valueB = Some('any object').flatMap(x => Some(`${x}!!!`)).getOrUndefined();
 let valueC = Some(null).flatMap(() => Option.of(2)).map(x => x * 3).getOrElse(() => 0);
 // valueC = 6
 
-let valueD = Some(1).mapNullable(() => null).getOrElse(() => -1);
+let valueD = Some(1).mapNullable(() => null).getOrReturn(-1);
 // valueD = -1
+
+Some(1).equals(Some(1))
+// true
+
+None.equals(None)
+// true
+
+Some('abc').equals(None)
+// false
 
 None.isDefined; // false
 Some(1).isDefined; // true

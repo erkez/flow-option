@@ -75,10 +75,24 @@ export class Option<+A> {
     }
 
     /**
+     * Returns the option's value if the option is nonempty, otherwise return other.
+     */
+    getOrReturn<B>(other: B): A | B {
+        return this.isEmpty ? other : this.get();
+    }
+
+    /**
      * Returns the option's value if the option is nonempty, otherwise returns undefined.
      */
     getOrUndefined(): A | void {
         return this.isEmpty ? undefined : this.get();
+    }
+
+    /**
+     * Compares the option's value with other option's value and returns true when they match. None always matches other None.
+     */
+    equals<B>(other: Option<B>): boolean {
+        return this.isDefined && other.isDefined ? this.get() === other.get() : this === other;
     }
 
     /**
