@@ -61,16 +61,26 @@ Some('bar').forEach(x => {
     -   [forEach](#foreach)
     -   [filter](#filter)
     -   [getOrElse](#getorelse)
+    -   [getOrReturn](#getorreturn)
     -   [getOrUndefined](#getorundefined)
+    -   [equals](#equals)
     -   [of](#of)
 -   [None](#none)
 -   [Some](#some)
 
 ## Option
 
+[src/index.js:9-108](https://github.com/erkez/flow-option/blob/9be19af42bd28aeed5f6bca288af237ff5426879/src/index.js#L9-L108 "Source code on GitHub")
+
 Represents optional values. Instances of Option are either an instance of Some or the object None.
 
+**Parameters**
+
+-   `$privateToken` **any** 
+
 ### get
+
+[src/index.js:13-13](https://github.com/erkez/flow-option/blob/9be19af42bd28aeed5f6bca288af237ff5426879/src/index.js#L13-L13 "Source code on GitHub")
 
 Returns the option's value.
 
@@ -78,17 +88,23 @@ Type: function (): A
 
 ### isEmpty
 
+[src/index.js:18-18](https://github.com/erkez/flow-option/blob/9be19af42bd28aeed5f6bca288af237ff5426879/src/index.js#L18-L18 "Source code on GitHub")
+
 Returns true if the option is None, false otherwise.
 
 Type: [boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)
 
 ### isDefined
 
+[src/index.js:29-31](https://github.com/erkez/flow-option/blob/9be19af42bd28aeed5f6bca288af237ff5426879/src/index.js#L29-L31 "Source code on GitHub")
+
 Returns true if the option is an instance of Some, false otherwise.
 
 Returns **[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** 
 
 ### map
+
+[src/index.js:36-38](https://github.com/erkez/flow-option/blob/9be19af42bd28aeed5f6bca288af237ff5426879/src/index.js#L36-L38 "Source code on GitHub")
 
 Returns a Some containing the result of applying f to this Option's value if this Option is nonempty.
 
@@ -100,6 +116,8 @@ Returns **[Option](#option)&lt;B>**
 
 ### mapNullable
 
+[src/index.js:43-45](https://github.com/erkez/flow-option/blob/9be19af42bd28aeed5f6bca288af237ff5426879/src/index.js#L43-L45 "Source code on GitHub")
+
 Like map, but if resulting value is null, then returns None.
 
 **Parameters**
@@ -109,6 +127,8 @@ Like map, but if resulting value is null, then returns None.
 Returns **[Option](#option)&lt;B>** 
 
 ### flatMap
+
+[src/index.js:50-52](https://github.com/erkez/flow-option/blob/9be19af42bd28aeed5f6bca288af237ff5426879/src/index.js#L50-L52 "Source code on GitHub")
 
 Returns the result of applying f to this Option's value if this Option is nonempty. Returns None if this Option is empty. Slightly different from map in that f is expected to return an Option (which could be None).
 
@@ -120,6 +140,8 @@ Returns **[Option](#option)&lt;B>**
 
 ### forEach
 
+[src/index.js:57-61](https://github.com/erkez/flow-option/blob/9be19af42bd28aeed5f6bca288af237ff5426879/src/index.js#L57-L61 "Source code on GitHub")
+
 Apply the given procedure f to the option's value, if it is nonempty.
 
 **Parameters**
@@ -129,6 +151,8 @@ Apply the given procedure f to the option's value, if it is nonempty.
 Returns **void** 
 
 ### filter
+
+[src/index.js:66-68](https://github.com/erkez/flow-option/blob/9be19af42bd28aeed5f6bca288af237ff5426879/src/index.js#L66-L68 "Source code on GitHub")
 
 Returns this Option if it is nonempty and applying the predicate to this Option's value returns true.
 
@@ -140,6 +164,8 @@ Returns **[Option](#option)&lt;A>**
 
 ### getOrElse
 
+[src/index.js:73-75](https://github.com/erkez/flow-option/blob/9be19af42bd28aeed5f6bca288af237ff5426879/src/index.js#L73-L75 "Source code on GitHub")
+
 Returns the option's value if the option is nonempty, otherwise return the result of evaluating other.
 
 **Parameters**
@@ -148,13 +174,41 @@ Returns the option's value if the option is nonempty, otherwise return the resul
 
 Returns **(A | B)** 
 
+### getOrReturn
+
+[src/index.js:80-82](https://github.com/erkez/flow-option/blob/9be19af42bd28aeed5f6bca288af237ff5426879/src/index.js#L80-L82 "Source code on GitHub")
+
+Returns the option's value if the option is nonempty, otherwise return other.
+
+**Parameters**
+
+-   `other` **B** 
+
+Returns **(A | B)** 
+
 ### getOrUndefined
+
+[src/index.js:87-89](https://github.com/erkez/flow-option/blob/9be19af42bd28aeed5f6bca288af237ff5426879/src/index.js#L87-L89 "Source code on GitHub")
 
 Returns the option's value if the option is nonempty, otherwise returns undefined.
 
 Returns **(A | void)** 
 
+### equals
+
+[src/index.js:94-96](https://github.com/erkez/flow-option/blob/9be19af42bd28aeed5f6bca288af237ff5426879/src/index.js#L94-L96 "Source code on GitHub")
+
+Compares the option's value with other option's value and returns true when they match. None always matches other None.
+
+**Parameters**
+
+-   `other` **[Option](#option)&lt;B>** 
+
+Returns **[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** 
+
 ### of
+
+[src/index.js:101-103](https://github.com/erkez/flow-option/blob/9be19af42bd28aeed5f6bca288af237ff5426879/src/index.js#L101-L103 "Source code on GitHub")
 
 An Option factory which creates Some(x) if the argument is not null, and None if it is null.
 
@@ -166,11 +220,15 @@ Returns **[Option](#option)&lt;V>**
 
 ## None
 
+[src/index.js:123-123](https://github.com/erkez/flow-option/blob/9be19af42bd28aeed5f6bca288af237ff5426879/src/index.js#L123-L123 "Source code on GitHub")
+
 The empty None object.
 
 Type: [Option](#option)&lt;any>
 
 ## Some
+
+[src/index.js:147-149](https://github.com/erkez/flow-option/blob/9be19af42bd28aeed5f6bca288af237ff5426879/src/index.js#L147-L149 "Source code on GitHub")
 
 Creates Some(x). Note that Some(null) is valid.
 
