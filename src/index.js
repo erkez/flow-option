@@ -96,10 +96,12 @@ export class Option<+A> {
     }
 
     /**
-     * Shallowly converts to value or null.
+     * Returns value if present, null otherwise. If value contains a method `toJSON`,
+     * returns the result of method call.
      */
-    toJSON(): A | null {
-        return this.getOrReturn(null);
+    toJSON(): mixed {
+        let value = this.getOrReturn(null);
+        return value != null && typeof value.toJSON === 'function' ? value.toJSON() : value;
     }
 
     /**
