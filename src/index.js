@@ -96,14 +96,27 @@ export class Option<+A> {
     }
 
     /**
+     * Shallowly converts to value or null.
+     */
+    toJSON(): A | null {
+        return this.getOrReturn(null);
+    }
+
+    /**
      * An Option factory which creates Some(x) if the argument is not null, and None if it is null.
      */
     static of<V>(value?: ?V): Option<V> {
         return value == null ? None : Some(value);
     }
 
+    /**
+     * The empty None object
+     */
     static None: Option<empty>;
 
+    /**
+     * Creates Some(x). Note that Some(null) is valid.
+     */
     static Some: <A>(value: A) => Option<A>;
 }
 

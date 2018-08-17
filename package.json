@@ -1,6 +1,6 @@
 {
   "name": "@ekz/option",
-  "version": "1.0.5",
+  "version": "1.1.0",
   "description": "Option/Maybe type to be used with flow.js",
   "keywords": [
     "option",
@@ -39,6 +39,7 @@
   },
   "scripts": {
     "build": "babel src/ -d lib/ && flow-copy-source -v src lib",
-    "prepublish": "yarn run build"
+    "docs": "documentation readme src/index.js --github --section=API",
+    "prepublish": "yarn run docs --diff-only && yarn run build"
   }
 }
