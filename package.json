@@ -1,6 +1,6 @@
 {
   "name": "@ekz/option",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Option/Maybe type to be used with flow.js",
   "keywords": [
     "option",
@@ -34,7 +34,7 @@
     "babel-preset-env": "^1.6.1",
     "babel-preset-flow": "^6.23.0",
     "documentation": "^5.4.0",
-    "flow-bin": "^0.66.0",
+    "flow-bin": "^0.91.0",
     "flow-copy-source": "^1.3.0"
   },
   "scripts": {

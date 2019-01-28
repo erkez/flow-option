@@ -101,7 +101,13 @@ export class Option<+A> {
      */
     toJSON(): mixed {
         let value = this.getOrReturn(null);
-        return value != null && typeof value.toJSON === 'function' ? value.toJSON() : value;
+        
+        if (value != null && typeof value.toJSON === 'function') {
+            // $FlowFixMe
+            return value.toJSON();
+        } else {
+            return value;
+        }
     }
 
     /**
