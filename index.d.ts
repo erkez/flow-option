@@ -3,8 +3,8 @@ declare module '@ekz/option' {
     export class Option<A> {
         private constructor();
         get(): A;
-        readonly isEmpty: boolean
-        isDefined(): boolean;
+        readonly isEmpty: boolean;
+        readonly isDefined: boolean;
         map<B>(f: (value: A) => B): Option<B>;
         mapNullable<B>(f: (value: A) => B | null | void): Option<B>;
         flatMap<B>(f: (value: A) => Option<B>): Option<B>;

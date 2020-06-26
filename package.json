@@ -1,6 +1,6 @@
 {
   "name": "@ekz/option",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "Option/Maybe type to be used with flow.js",
   "types": "index.d.ts",
   "keywords": [
