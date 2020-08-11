@@ -6,7 +6,7 @@ declare module '@ekz/option' {
         readonly isEmpty: boolean;
         readonly isDefined: boolean;
         map<B>(f: (value: A) => B): Option<B>;
-        mapNullable<B>(f: (value: A) => B | null | void): Option<B>;
+        mapNullable<B>(f: (value: A) => B | null | void | undefined): Option<B>;
         flatMap<B>(f: (value: A) => Option<B>): Option<B>;
         forEach(f: (value: A) => any): void;
         filter(predicate: (value: A) => boolean): Option<A>;
@@ -16,7 +16,7 @@ declare module '@ekz/option' {
         equals<B>(other: Option<B>): boolean;
         toJSON(): unknown;
 
-        static of<V>(value?: V | null | void): Option<V>;
+        static of<V>(value?: V | null | void | undefined): Option<V>;
 
         static None: Option<never>;
         static Some<A>(value: A): Option<A>;
