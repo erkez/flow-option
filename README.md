@@ -51,33 +51,44 @@ Some('bar').forEach(x => {
 
 ### Table of Contents
 
--   [Option](#option)
-    -   [get](#get)
-    -   [isEmpty](#isempty)
-    -   [isDefined](#isdefined)
-    -   [map](#map)
-    -   [mapNullable](#mapnullable)
-    -   [flatMap](#flatmap)
-    -   [forEach](#foreach)
-    -   [filter](#filter)
-    -   [getOrElse](#getorelse)
-    -   [getOrReturn](#getorreturn)
-    -   [getOrUndefined](#getorundefined)
-    -   [equals](#equals)
-    -   [toJSON](#tojson)
-    -   [of](#of)
-    -   [None](#none)
-    -   [Some](#some)
--   [None](#none-1)
--   [Some](#some-1)
+*   [Option](#option)
+    *   [Parameters](#parameters)
+    *   [get](#get)
+    *   [isEmpty](#isempty)
+    *   [isDefined](#isdefined)
+    *   [map](#map)
+        *   [Parameters](#parameters-1)
+    *   [mapNullable](#mapnullable)
+        *   [Parameters](#parameters-2)
+    *   [flatMap](#flatmap)
+        *   [Parameters](#parameters-3)
+    *   [forEach](#foreach)
+        *   [Parameters](#parameters-4)
+    *   [filter](#filter)
+        *   [Parameters](#parameters-5)
+    *   [getOrElse](#getorelse)
+        *   [Parameters](#parameters-6)
+    *   [getOrReturn](#getorreturn)
+        *   [Parameters](#parameters-7)
+    *   [getOrUndefined](#getorundefined)
+    *   [equals](#equals)
+        *   [Parameters](#parameters-8)
+    *   [toJSON](#tojson)
+    *   [of](#of)
+        *   [Parameters](#parameters-9)
+    *   [None](#none)
+    *   [Some](#some)
+*   [None](#none-1)
+*   [Some](#some-1)
+    *   [Parameters](#parameters-10)
 
 ## Option
 
 Represents optional values. Instances of Option are either an instance of Some or the object None.
 
-**Parameters**
+### Parameters
 
--   `$privateToken` **any** 
+*   `$privateToken` **any**&#x20;
 
 ### get
 
@@ -95,135 +106,137 @@ Type: [boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Glob
 
 Returns true if the option is an instance of Some, false otherwise.
 
-Returns **[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** 
+Type: [boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)
+
+Returns **[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)**&#x20;
 
 ### map
 
 Returns a Some containing the result of applying f to this Option's value if this Option is nonempty.
 
-**Parameters**
+#### Parameters
 
--   `f` **function (A): B** 
+*   `f` **function (A): B**&#x20;
 
-Returns **[Option](#option)&lt;B>** 
+Returns **[Option](#option)\<B>**&#x20;
 
 ### mapNullable
 
 Like map, but if resulting value is null, then returns None.
 
-**Parameters**
+#### Parameters
 
--   `f` **function (A): B?** 
+*   `f` **function (A): B?**&#x20;
 
-Returns **[Option](#option)&lt;B>** 
+Returns **[Option](#option)\<B>**&#x20;
 
 ### flatMap
 
 Returns the result of applying f to this Option's value if this Option is nonempty. Returns None if this Option is empty. Slightly different from map in that f is expected to return an Option (which could be None).
 
-**Parameters**
+#### Parameters
 
--   `f` **function (A): [Option](#option)&lt;B>** 
+*   `f` **function (A): [Option](#option)\<B>**&#x20;
 
-Returns **[Option](#option)&lt;B>** 
+Returns **[Option](#option)\<B>**&#x20;
 
 ### forEach
 
 Apply the given procedure f to the option's value, if it is nonempty.
 
-**Parameters**
+#### Parameters
 
--   `f` **function (A): any** 
+*   `f` **function (A): any**&#x20;
 
-Returns **void** 
+Returns **void**&#x20;
 
 ### filter
 
 Returns this Option if it is nonempty and applying the predicate to this Option's value returns true.
 
-**Parameters**
+#### Parameters
 
--   `predicate` **function (A): [boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** 
+*   `predicate` **function (A): [boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)**&#x20;
 
-Returns **[Option](#option)&lt;A>** 
+Returns **[Option](#option)\<A>**&#x20;
 
 ### getOrElse
 
 Returns the option's value if the option is nonempty, otherwise return the result of evaluating other.
 
-**Parameters**
+#### Parameters
 
--   `other` **function (): B** 
+*   `other` **function (): B**&#x20;
 
-Returns **(A | B)** 
+Returns **(A | B)**&#x20;
 
 ### getOrReturn
 
 Returns the option's value if the option is nonempty, otherwise return other.
 
-**Parameters**
+#### Parameters
 
--   `other` **B** 
+*   `other` **B**&#x20;
 
-Returns **(A | B)** 
+Returns **(A | B)**&#x20;
 
 ### getOrUndefined
 
 Returns the option's value if the option is nonempty, otherwise returns undefined.
 
-Returns **(A | void)** 
+Returns **(A | void)**&#x20;
 
 ### equals
 
 Compares the option's value with other option's value and returns true when they match. None always matches other None.
 
-**Parameters**
+#### Parameters
 
--   `other` **[Option](#option)&lt;B>** 
+*   `other` **[Option](#option)\<B>**&#x20;
 
-Returns **[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** 
+Returns **[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)**&#x20;
 
 ### toJSON
 
 Returns value if present, null otherwise. If value contains a method `toJSON`,
 returns the result of method call.
 
-Returns **any** 
+Returns **any**&#x20;
 
 ### of
 
 An Option factory which creates Some(x) if the argument is not null, and None if it is null.
 
-**Parameters**
+#### Parameters
 
--   `value` **V?** 
+*   `value` **V??**&#x20;
 
-Returns **[Option](#option)&lt;V>** 
+Returns **[Option](#option)\<V>**&#x20;
 
 ### None
 
 The empty None object
 
-Type: [Option](#option)&lt;any>
+Type: [Option](#option)\<any>
 
 ### Some
 
 Creates Some(x). Note that Some(null) is valid.
 
-Type: function (value: A): [Option](#option)&lt;A>
+Type: function (value: A): [Option](#option)\<A>
 
 ## None
 
 The empty None object.
 
-Type: [Option](#option)&lt;any>
+Type: [Option](#option)\<any>
 
 ## Some
 
 Creates Some(x). Note that Some(null) is valid.
 
-**Parameters**
+### Parameters
 
--   `value` **A** 
+*   `value` **A**&#x20;
 
-Returns **[Option](#option)&lt;A>** 
+Returns **[Option](#option)\<A>**&#x20;

@@ -12,7 +12,7 @@ declare module '@ekz/option' {
         filter(predicate: (value: A) => boolean): Option<A>;
         getOrElse<B>(other: () => B): A | B;
         getOrReturn<B>(other: B): A | B;
-        getOrUndefined(): A | void;
+        getOrUndefined(): A | undefined;
         equals<B>(other: Option<B>): boolean;
         toJSON(): unknown;
 
