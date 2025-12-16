@@ -1,7 +1,7 @@
 {
   "name": "@ekz/option",
-  "version": "1.2.5",
-  "packageManager": "yarn@4.3.1",
+  "version": "1.2.6",
+  "packageManager": "yarn@4.12.0",
   "description": "Option/Maybe type to be used with flow.js",
   "types": "index.d.ts",
   "keywords": [
@@ -36,7 +36,7 @@
     "babel-preset-env": "^1.7.0",
     "babel-preset-flow": "^6.23.0",
     "documentation": "^14.0.3",
-    "flow-bin": "^0.241.0",
+    "flow-bin": "^0.294.0",
     "flow-copy-source": "^2.0.9"
   },
   "scripts": {

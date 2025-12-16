@@ -252,7 +252,7 @@ __metadata:
     babel-preset-env: "npm:^1.7.0"
     babel-preset-flow: "npm:^6.23.0"
     documentation: "npm:^14.0.3"
-    flow-bin: "npm:^0.241.0"
+    flow-bin: "npm:^0.294.0"
     flow-copy-source: "npm:^2.0.9"
   languageName: unknown
   linkType: soft
@@ -2170,12 +2170,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"flow-bin@npm:^0.241.0":
-  version: 0.241.0
-  resolution: "flow-bin@npm:0.241.0"
+"flow-bin@npm:^0.294.0":
+  version: 0.294.0
+  resolution: "flow-bin@npm:0.294.0"
   bin:
     flow: cli.js
-  checksum: 10c0/7b35d58a87abcfa1086b52ca23d750be688bc954f11b3ea5b06d177eca158886c63b9cc57a2fb5d4fe1567e402e2c0ac2f67942b6911a2441991188b98dc1115
+  checksum: 10c0/153e805d0c860b03a11d1ea998dbfd5be576dbe28ebbe7ff8ca0f6f8446d2f5cb3f6073647a8eb7f0181ca5c81cf9d873efaf54e3476933dbad379f955ebb3df
   languageName: node
   linkType: hard
 
